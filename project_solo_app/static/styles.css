@@ -1,0 +1,24 @@
+body {
+    background-color: #222D32; 
+}
+form {
+    margin: 0 40px;
+}
+h1 {
+    color: #0DB8DE;
+}
+h4 {
+    color: #0DB8DE;
+}
+p {
+    color: white;
+}
+a {
+    color: #0DB8DE;
+} 
+label {
+    color: #0DB8DE;
+}
+messages {
+    color: white
+}

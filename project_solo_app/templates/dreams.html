@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>My Dreams</title>
+</head>
+<body>
+    <h1>My Dreams</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Mood</th>
+                <th>Dream Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dream in dreams %}
+                <tr>
+                    <td>{{ dream.id }}</td>
+                    <td>{{ dream.title }}</td>
+                    <td>{{ dream.mood }}</td>
+                    <td>{{ dream.dream_date|date:"SHORT_DATE_FORMAT" }}</td>
+                    <td>{{ dream.description }}</td>
+                    <td><a href="/project_solo_app/{{ dream.id }}">Dream</a> | <a href="/project_solo_app/{{ dream.id }}/edit">Edit</a> | <a href="/project_solo_app/{{ dream.id }}/delete">Delete</a> </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <a href="/project_solo_app/new">Click here to add a dream</a>
+    </table>
+</body>
+</html>

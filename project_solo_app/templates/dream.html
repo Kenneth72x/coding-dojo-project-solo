@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Dream Details</title>
+</head>
+<body>
+    <h1>Dream #{{ dream.id }}</h1>
+    <h4>Title</h4>
+    <p>{{ dream.title }}</p>
+    <h4>Mood</h4>
+    <p>{{ dream.mood }}</p>
+    <h4>Dream Date</h4>
+    <p>{{ dream.dream_date|date:"SHORT_DATE_FORMAT" }}</p>
+    <h4>Description</h4>
+    <p>{{ dream.description }}</p>
+    <h4>Last Updated:</h4>
+    <p>{{ dream.updated_at }}</p>
+    <a href="/project_solo_app/{{ dream.id }}/edit">Edit</a> | <a href="/project_solo_app/{{ dream.id }}/delete">Delete</a> 
+</body>
+</html>

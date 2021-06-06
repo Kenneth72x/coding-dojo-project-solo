@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Edit Dream</title>
+</head>
+<body>
+    <h1>Edit Dream</h1>
+
+    {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+            <li>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="/project_solo_app/{{ dream.id }}/update" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" class="form-control" value='{{ dream.title }}'required>
+        </div>
+        <div class="form-group">
+            <label for="mood">Mood</label>
+            <input type="text" name="mood" id="mood" class="form-control" value='{{ dream.mood }}'required>
+        </div>
+        <div class="form-group">
+            <label for="dream_date">Dream Date</label>
+            <input type="date" name="dream_date" id="dream_date" class="form-control" value='{{ dream.dream_date|date:'Y-m-d' }}' required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ dream.description }}</textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
