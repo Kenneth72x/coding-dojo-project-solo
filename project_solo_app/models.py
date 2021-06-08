@@ -1,5 +1,6 @@
 from django.db import models
 
+# Dream database
 class DreamManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
@@ -20,4 +21,6 @@ class Dream(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = DreamManager()
-# Create your models here.
+
+
+
