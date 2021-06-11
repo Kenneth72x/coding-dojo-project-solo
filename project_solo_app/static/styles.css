@@ -1,11 +1,15 @@
 body {
-    background-color: #222D32;
+    background-image: url('/static/matt-howard-C0uLfBSEZK4-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 form {
     margin: 0 40px;
 }
 h1 {
     color: #0DB8DE;
+    text-align: center;
 }
 h4 {
     color: #0DB8DE;

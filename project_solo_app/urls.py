@@ -5,6 +5,8 @@ urlpatterns = [
     path('', views.index), 
     #localhost:8000/dreams/new
     path('new', views.new), 
+    #localhost:8000/inspiration
+    path('inspiration', views.inspiration),
     #localhost:8000/dreams/create
     path('create', views.create),
     #localhost:8000/dreams/<dream_id>/edit
@@ -15,5 +17,6 @@ urlpatterns = [
     path('<int:dream_id>', views.dream),
     #localhost:8000/dream/<dream_id>/delete
     path('<int:dream_id>/delete', views.delete),
+    
 
 ]

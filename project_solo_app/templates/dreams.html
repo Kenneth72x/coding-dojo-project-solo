@@ -11,9 +11,27 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/project_solo_app/">My Dreams</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/project_solo_app/new">Add A Dream</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/project_solo_app/inspiration">Inspiration</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div>
         <h1>My Dreams</h1>
-        <table class="table table-dark">
+        <table class="table shadow-lg table-dark">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -32,11 +50,10 @@
                         <td>{{ dream.mood }}</td>
                         <td>{{ dream.dream_date|date:"SHORT_DATE_FORMAT" }}</td>
                         <td>{{ dream.description }}</td>
-                        <td><a href="/project_solo_app/{{ dream.id }}">Dream</a> | <a href="/project_solo_app/{{ dream.id }}/edit">Edit</a> | <a href="/project_solo_app/{{ dream.id }}/delete">Delete</a> </td>
+                        <td><a href="/project_solo_app/{{ dream.id }}">Dream</a> | <a href="/project_solo_app/{{ dream.id }}/edit">Edit</a> | <a href="/project_solo_app/{{ dream.id }}/delete">Delete</a>
                     </tr>
                 {% endfor %}
             </tbody>
-            <a href="/project_solo_app/new">Click here to add a dream</a>
         </table>
     </div>
 </body>

@@ -12,6 +12,9 @@ def index(request):
 def new(request):
     return render(request, 'new.html')
 
+def inspiration(request):
+    return render(request, 'inspiration.html')    
+
 def create(request):
     #Create the dream
     errors = Dream.objects.basic_validator(request.POST)
@@ -65,3 +68,4 @@ def delete(request, dream_id):
     to_delete.delete()
     return redirect('/project_solo_app') 
 # Create your views here.
+

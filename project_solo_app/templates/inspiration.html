@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Add A New Dream</title>
+    <title>Inspiration</title>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -23,40 +22,11 @@
                         <a class="nav-link active" href="/project_solo_app/new">Add A Dream</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Inspiration</a>
+                        <a class="nav-link active" href="/project_solo_app/inspiration">Inspiration</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <h1>Add A New Dream</h1>
-
-    {% if messages %}
-        <ul class="messages">    
-            {% for message in messages %}    
-            <li>{{ message }}</li>    
-            {% endfor %}
-        </ul>
-    {% endif %}
-    <form action="/project_solo_app/create" method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" class="form-control"required>
-        </div>
-        <div class="form-group">
-            <label for="mood">Mood</label>
-            <input type="text" name="mood" id="mood" class="form-control"required>
-        </div>
-        <div class="form-group">
-            <label for="dream_date">Dream Date</label>
-            <input type="date" name="dream_date" id="dream_date" class="form-control"required>
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea name="description" id="description" cols="30" rows="10" class="form-control"required></textarea>
-        </div>
-        <button class="btn btn-primary">Submit</button>
-    </form>
 </body>
 </html>
