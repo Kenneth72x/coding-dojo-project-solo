@@ -50,7 +50,7 @@
                         <td>{{ dream.mood }}</td>
                         <td>{{ dream.dream_date|date:"SHORT_DATE_FORMAT" }}</td>
                         <td>{{ dream.description }}</td>
-                        <td><a href="/project_solo_app/{{ dream.id }}">Dream</a> | <a href="/project_solo_app/{{ dream.id }}/edit">Edit</a> | <a href="/project_solo_app/{{ dream.id }}/delete">Delete</a>
+                        <td><a href="/project_solo_app/{{ dream.id }}">Details</a> | <a href="/project_solo_app/{{ dream.id }}/edit">Edit</a> | <a href="/project_solo_app/{{ dream.id }}/delete">Delete</a>
                     </tr>
                 {% endfor %}
             </tbody>
