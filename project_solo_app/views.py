@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Dream
+from .api import quote
+import requests 
 
 
 def index(request):
@@ -12,8 +14,6 @@ def index(request):
 def new(request):
     return render(request, 'new.html')
 
-def inspiration(request):
-    return render(request, 'inspiration.html')    
 
 def create(request):
     #Create the dream
@@ -68,4 +68,17 @@ def delete(request, dream_id):
     to_delete.delete()
     return redirect('/project_solo_app') 
 # Create your views here.
+
+# API
+def inspiration(request):
+    response = requests.get("https://zenquotes.io/api/random")
+    quote = response.json()
+    context = {
+        'quote': quote[0]["q"],
+        'quoter' : quote[0]['a'],
+    }
+    return render(request, 'inspiration.html', context)
+
+
+
 

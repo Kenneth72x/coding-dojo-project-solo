@@ -26,3 +26,6 @@ label {
 messages {
     color: white
 }
+.quote {
+    text-align: center;
+}

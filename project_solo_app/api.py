@@ -7,6 +7,7 @@
 
 import requests
 
-response = requests.get("https://zenquotes.io/api/random")
-quote = response.json()
-print(quote[0]["h"])
+def quote():
+    response = requests.get("https://zenquotes.io/api/random")
+    quote = response.json()
+    return response
